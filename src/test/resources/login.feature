@@ -1,4 +1,4 @@
-Feature: Admin Login
+Feature: User Login
   Scenario: Successful Login
     Given I am on the login page
     When I enter correct email and password

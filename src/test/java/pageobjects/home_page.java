@@ -13,7 +13,7 @@ public class home_page {
         PageFactory.initElements(driver, this);
     }
 
-    By BANNER_TEXT = By.cssSelector("#user__home__pg > div > div > div.col-xl-6.mt-5.mt-xl-0 > h1");
+    By BANNER_TEXT = By.cssSelector("#user__home__pg > div > div > div.col-xl-6.mt-5.mt-xl-0 > h5");
 
     public String get_banner_text() {
         return driver.findElement(BANNER_TEXT).getText();
