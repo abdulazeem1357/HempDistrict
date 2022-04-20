@@ -25,7 +25,7 @@ public class login_steps {
     home_page HomePage;
 
     @Given("^I am on the login page$")
-    public void i_am_on_the_login_page() throws Exception {
+    public void i_am_on_the_login_page() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -39,21 +39,21 @@ public class login_steps {
     }
 
     @When("^I enter correct email and password$")
-    public void i_enter_correct_email_and_password() throws Exception {
+    public void i_enter_correct_email_and_password() {
         LoginPage.enter_email(email);
         LoginPage.enter_password(password);
         LoginPage.submit_form();
     }
 
     @Then("^I should be able to login successfully$")
-    public void i_should_be_able_to_login_successfully() throws Exception {
+    public void i_should_be_able_to_login_successfully() {
         HomePage = new home_page(driver);
         String bannerText = HomePage.get_banner_text();
         assertEquals(expected_text, bannerText);
     }
 
     @Then("^I close the browser$")
-    public void i_close_the_browser() throws Exception {
+    public void i_close_the_browser() {
         driver.quit();
     }
 }

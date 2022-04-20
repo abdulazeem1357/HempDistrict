@@ -34,7 +34,7 @@ public class register_steps {
     String expected_text = "Registration Successful";
 
     @Given("^I am on the register page$")
-    public void i_am_on_the_register_page() throws Exception {
+    public void i_am_on_the_register_page() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -49,7 +49,7 @@ public class register_steps {
     }
 
     @When("^I enter correct first name, last name, email, phone, country, state, zipcode, password, and confirm password$")
-    public void i_enter_correct_first_name_last_name_email_phone_country_state_zipcode_password_and_confirm_password() throws Exception {
+    public void i_enter_correct_first_name_last_name_email_phone_country_state_zipcode_password_and_confirm_password() {
         RegisterPage.enter_first_name(first_name);
         RegisterPage.enter_last_name(last_name);
         RegisterPage.enter_email_address(email);
@@ -62,7 +62,7 @@ public class register_steps {
     }
 
     @When("^I click on the register button$")
-    public void i_click_on_the_register_button() throws Exception {
+    public void i_click_on_the_register_button() {
         RegisterPage.register_button();
         RegisterVerificationPage = new register_verification_page(driver);
         RegisterVerificationPage.enter_verification_code(verification_code);
@@ -70,7 +70,7 @@ public class register_steps {
     }
 
     @Then("^I should be able to register successfully$")
-    public void i_should_be_able_to_register_successfully() throws Exception {
+    public void i_should_be_able_to_register_successfully() {
 //        String actualText = RegisterVerificationPage.get_registration_success_text();
 //        assertEquals(expected_text, actualText);
         RegisterVerificationPage.go_to_login_button();
