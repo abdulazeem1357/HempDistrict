@@ -1,0 +1,128 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Successful Login",
+        "description": "",
+        "id": "user-login;successful-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13124295800,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I am on the login page",
+            "match": {
+              "location": "login_steps.i_am_on_the_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4025602500,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I enter correct email and password",
+            "match": {
+              "location": "login_steps.i_enter_correct_email_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1638123200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I should be able to login successfully",
+            "match": {
+              "location": "login_steps.i_should_be_able_to_login_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "User Login",
+    "description": "",
+    "id": "user-login",
+    "keyword": "Feature",
+    "uri": "src/test/resources/login.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "User Signs up successfully",
+        "description": "",
+        "id": "user-registration;user-signs-up-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4354410500,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I am on the register page",
+            "match": {
+              "location": "register_steps.i_am_on_the_register_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 942431900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I enter correct first name, last name, email, phone, country, state, zipcode, password, and confirm password",
+            "match": {
+              "location": "register_steps.i_enter_correct_first_name_last_name_email_phone_country_state_zipcode_password_and_confirm_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1131978200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I click on the register button",
+            "match": {
+              "location": "register_steps.i_click_on_the_register_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1994207600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I should be able to register successfully",
+            "match": {
+              "location": "register_steps.i_should_be_able_to_register_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "User Registration",
+    "description": "",
+    "id": "user-registration",
+    "keyword": "Feature",
+    "uri": "src/test/resources/register.feature",
+    "tags": []
+  }
+]

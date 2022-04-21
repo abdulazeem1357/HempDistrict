@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="27.241489">
+<testcase classname="User Login" name="Successful Login" time="18.809472">
+<system-out><![CDATA[Given I am on the login page................................................passed
+When I enter correct email and password.....................................passed
+Then I should be able to login successfully.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Registration" name="User Signs up successfully" time="8.432017">
+<system-out><![CDATA[Given I am on the register page.............................................passed
+When I enter correct first name, last name, email, phone, country, state, zipcode, password, and confirm password.passed
+And I click on the register button..........................................passed
+Then I should be able to register successfully..............................passed
+]]></system-out>
+</testcase>
+</testsuite>

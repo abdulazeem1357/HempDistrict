@@ -3,39 +3,28 @@ package stepdefs;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import cucumber.test_context;
 import pageobjects.home_page;
 import pageobjects.login_page;
-
 import static org.junit.Assert.assertEquals;
 
-
 public class login_steps {
-
-    WebDriver driver;
     login_page LoginPage;
+    home_page HomePage;
+    test_context testContext;
     String email = "charlestsmith888@gmail.com";
     String password = "admin123";
     String expected_text = "Let's Love Fashion";
-    home_page HomePage;
+
+    public login_steps(test_context Context) {
+        testContext = Context;
+        LoginPage = testContext.getPageObjectManager().getLoginPage();
+        HomePage = testContext.getPageObjectManager().getHomePage();
+    }
 
     @Given("^I am on the login page$")
     public void i_am_on_the_login_page() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://dev124.onlinetestingserver.com/hemp-district/user/login.php");
-
-        WebElement id = driver.findElement(By.id("signin__btn"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", id);
-
-        LoginPage = new login_page(driver);
+        LoginPage.navigate_url();
     }
 
     @When("^I enter correct email and password$")
@@ -47,13 +36,8 @@ public class login_steps {
 
     @Then("^I should be able to login successfully$")
     public void i_should_be_able_to_login_successfully() {
-        HomePage = new home_page(driver);
         String bannerText = HomePage.get_banner_text();
         assertEquals(expected_text, bannerText);
-    }
-
-    @Then("^I close the browser$")
-    public void i_close_the_browser() {
-        driver.quit();
+        testContext.getWebDriverManager().CloseDriver();
     }
 }

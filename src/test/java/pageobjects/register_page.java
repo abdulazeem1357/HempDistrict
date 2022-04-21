@@ -27,6 +27,14 @@ public class register_page {
 //    By REGISTER_BUTTON = By.id("signup__register__btn");
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
+    public void navigate_url() {
+        driver.get("https://dev124.onlinetestingserver.com/hemp-district/user/register.php");
+        //Scrolling the form into the view
+        WebElement scroll_to = driver.findElement(By.id("signup__first__name"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", scroll_to);
+    }
+
     public void enter_first_name(String first_name) {
         driver.findElement(FIRST_NAME_FIELD).sendKeys(first_name);
     }
@@ -72,6 +80,7 @@ public class register_page {
         js.executeScript("arguments[0].scrollIntoView();", scroll_to);
 
         WebElement REGISTER_BUTTON = driver.findElement(By.id("signup__register__btn"));
-        js.executeScript("arguments[0].click();", REGISTER_BUTTON);
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("arguments[0].click();", REGISTER_BUTTON);
     }
 }

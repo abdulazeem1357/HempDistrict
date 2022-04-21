@@ -17,8 +17,13 @@ public class login_page {
     By EMAIL_FIELD = By.id("signin__email");
     By PASSWORD_FIELD = By.id("signin__pass");
     By LOGIN_PAGE_HEADER = By.cssSelector("#title__banner > div > div > div > div > h1");
-    WebElement SUBMIT_BUTTON = driver.findElement(By.id("signin__btn"));
-    JavascriptExecutor executor = (JavascriptExecutor) driver;
+
+    public void navigate_url() {
+        driver.get("https://dev124.onlinetestingserver.com/hemp-district/user/login.php");
+        WebElement id = driver.findElement(By.id("signin__btn"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", id);
+    }
 
     public void enter_email(String email) {
         driver.findElement(EMAIL_FIELD).sendKeys(email);
@@ -29,7 +34,9 @@ public class login_page {
     }
 
     public void submit_form() {
-        executor.executeScript("arguments[0].click();", SUBMIT_BUTTON);
+        WebElement SUBMIT_BUTTON = driver.findElement(By.id("signin__btn"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", SUBMIT_BUTTON);
     }
 
     public String get_login_page_header() {
