@@ -1,11 +1,12 @@
 package stepdefs;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import cucumber.test_context;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageobjects.home_page;
 import pageobjects.login_page;
+
 import static org.junit.Assert.assertEquals;
 
 public class login_steps {

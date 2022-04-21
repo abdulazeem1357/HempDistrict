@@ -1,12 +1,13 @@
 package stepdefs;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import cucumber.test_context;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageobjects.login_page;
 import pageobjects.register_page;
 import pageobjects.register_verification_page;
+
 import static org.junit.Assert.assertEquals;
 
 public class register_steps {
