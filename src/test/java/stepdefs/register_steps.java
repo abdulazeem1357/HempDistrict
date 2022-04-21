@@ -64,6 +64,5 @@ public class register_steps {
         RegisterVerificationPage.go_to_login_button();
         String actualText = LoginPage.get_login_page_header();
         assertEquals(expected_text, actualText);
-        testContext.getWebDriverManager().CloseDriver();
     }
 }

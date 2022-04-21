@@ -39,6 +39,5 @@ public class login_steps {
     public void i_should_be_able_to_login_successfully() {
         String bannerText = HomePage.get_banner_text();
         assertEquals(expected_text, bannerText);
-        testContext.getWebDriverManager().CloseDriver();
     }
 }
